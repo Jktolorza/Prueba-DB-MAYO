@@ -1,0 +1,128 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="C4E7B4F6-01B8-EE65-A8E7-BE80FE7B1967" name="Test">
+<createdBy>Jktolorza</createdBy>
+<createdTime>2020-03-13 01:16:23 UTC</createdTime>
+<ownerDesignName>Pruebaa</ownerDesignName>
+<engineerTo>
+<item key="1BAB9510-6810-8ECB-3078-BBC107451344" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="idTest" id="D3C044E6-8F78-E82B-C5EC-ACFA62E0366E">
+<createdBy>Jktolorza</createdBy>
+<createdTime>2020-03-13 01:16:31 UTC</createdTime>
+<ownerDesignName>Pruebaa</ownerDesignName>
+<engineerTo>
+<item key="1BAB9510-6810-8ECB-3078-BBC107451344" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nombre" id="BE7C7D8B-9239-0887-2E9E-7CBCD88CD6A5">
+<createdBy>Jktolorza</createdBy>
+<createdTime>2020-03-13 01:16:41 UTC</createdTime>
+<ownerDesignName>Pruebaa</ownerDesignName>
+<engineerTo>
+<item key="1BAB9510-6810-8ECB-3078-BBC107451344" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="descripcion" id="33FDD3D8-9D99-6354-9869-B27A2818604A">
+<createdBy>Jktolorza</createdBy>
+<createdTime>2020-03-13 01:17:00 UTC</createdTime>
+<ownerDesignName>Pruebaa</ownerDesignName>
+<engineerTo>
+<item key="1BAB9510-6810-8ECB-3078-BBC107451344" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>300 CHAR</dataTypeSize>
+<ownDataTypeParameters>300 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="unidad" id="373DFF23-B567-BE6A-80E4-BD42D4C5C049">
+<createdBy>Jktolorza</createdBy>
+<createdTime>2020-03-13 01:17:15 UTC</createdTime>
+<ownerDesignName>Pruebaa</ownerDesignName>
+<engineerTo>
+<item key="1BAB9510-6810-8ECB-3078-BBC107451344" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="autor" id="D610F1ED-5929-F515-6A18-D21282E3880A">
+<createdBy>Jktolorza</createdBy>
+<createdTime>2020-03-13 01:17:32 UTC</createdTime>
+<ownerDesignName>Pruebaa</ownerDesignName>
+<engineerTo>
+<item key="1BAB9510-6810-8ECB-3078-BBC107451344" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fechaDeCreacion" id="D53CFB6E-9885-B3E6-2F0A-F2D646055599">
+<createdBy>Jktolorza</createdBy>
+<createdTime>2020-03-13 01:17:46 UTC</createdTime>
+<ownerDesignName>Pruebaa</ownerDesignName>
+<engineerTo>
+<item key="1BAB9510-6810-8ECB-3078-BBC107451344" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="idPrograma" id="15C00A2D-5525-909D-D475-8B61951FB907">
+<createdBy>Jktolorza</createdBy>
+<createdTime>2020-03-13 01:25:19 UTC</createdTime>
+<generatorID>4155185B-1B7E-FC33-422C-C4D957972270</generatorID>
+<ownerDesignName>Pruebaa</ownerDesignName>
+<engineerTo>
+<item key="1BAB9510-6810-8ECB-3078-BBC107451344" value="true"/>
+</engineerTo>
+<referedAttribute>4372826C-A62B-BCFC-9D7F-3FC8DA581CAF</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="6263B551-7322-E2B5-0596-C34E38FC6CA4" name="Test PK">
+<createdBy>Jktolorza</createdBy>
+<createdTime>2020-03-13 01:16:39 UTC</createdTime>
+<ownerDesignName>Pruebaa</ownerDesignName>
+<engineerTo>
+<item key="1BAB9510-6810-8ECB-3078-BBC107451344" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>D3C044E6-8F78-E82B-C5EC-ACFA62E0366E</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

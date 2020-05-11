@@ -1,0 +1,125 @@
+--1.Conocer el numero de evaluaciones por curso
+
+SELECT idcurso, programa_idprograma AS "ID Programa", nombreprograma AS "Programa", COUNT(relation_9.curso_idcurso) AS "Evaluaciones por curso"
+FROM curso
+LEFT JOIN relation_9 ON (curso.idcurso = relation_9.curso_idcurso)
+LEFT JOIN programa ON (curso.programa_idprograma = programa.idprograma)
+GROUP BY curso.idcurso ,curso.programa_idprograma, programa.nombreprograma
+ORDER BY idcurso;
+
+--2.Conocer los cursos sin evaluacion
+
+SELECT idcurso, programa_idprograma AS "ID Programa", COUNT(relation_9.curso_idcurso) AS "Evaluaciones por curso"
+FROM curso LEFT JOIN relation_9 ON (curso.idcurso = relation_9.curso_idcurso)
+GROUP BY curso.idcurso ,curso.programa_idprograma
+HAVING COUNT(relation_9.curso_idcurso) = 0
+ORDER BY idcurso;
+
+--3.Determinar las evalaciones con deficiencia
+
+-- creacion de una vista para hacer mas eficiente el codigo
+
+CREATE OR REPLACE VIEW evaluaciones_deficionetes AS
+SELECT test.idtest AS test, pregunta.idpregunta AS pregunta, 
+COUNT(alternativa.idalternativa) AS alternativas,
+COUNT(CASE WHEN alternativa.logicocorreccion = '1' THEN 1 END) AS correctas,
+COUNT(CASE WHEN alternativa.logicocorreccion = '0' THEN 1 END) AS incorrectas
+FROM pregunta
+INNER JOIN alternativa ON pregunta.idpregunta = alternativa.pregunta_idpregunta
+INNER JOIN test ON pregunta.test_idtest = test.idtest
+GROUP BY pregunta.idpregunta, test.idtest
+ORDER BY test, pregunta;
+
+--consulta utilizando la vista
+
+SELECT test.nombre AS nombre_evaluacion
+FROM test
+LEFT JOIN evaluaciones_deficionetes ON test.idtest = evaluaciones_deficionetes.test
+LEFT JOIN pregunta ON test.idtest = pregunta.test_idtest
+LEFT JOIN alternativa ON pregunta.idpregunta = alternativa.pregunta_idpregunta
+GROUP BY test.nombre
+HAVING
+COUNT(CASE WHEN evaluaciones_deficionetes.test = test.idtest THEN 1 END) = 0
+OR COUNT(CASE WHEN pregunta.idpregunta = evaluaciones_deficionetes.pregunta AND evaluaciones_deficionetes.alternativas < 3 THEN 1 END) > 0
+OR COUNT(CASE WHEN evaluaciones_deficionetes.correctas = 0 OR evaluaciones_deficionetes.incorrectas = 0 THEN 1 END) > 0
+ORDER BY nombre;
+
+--4.determinar cuantos alumnos hay en cada curso
+
+SELECT idcurso, COUNT(alumno.idalumno) AS "Cantidad de alumnos"
+FROM curso INNER JOIN alumno ON(curso.idcurso = alumno.curso_idcurso)
+GROUP BY idcurso;
+
+--5. obtener puntaje no normalizado de cada evaluacion.
+-- P = buenas – malas/4
+-- se crea una vista para revisar la alternativa que cada alumno escogio para cada pregunta en su prueba
+-- y a su vez el puntaje que obtuvo por estas mismas
+CREATE OR REPLACE VIEW puntajes_por_alumno AS
+SELECT 
+respuesta.alumno_idalumno AS id_alumno,
+alumno.nombre AS alumno_nombre,
+test.idtest AS id_test,
+pregunta.idpregunta AS pregunta,
+alternativa.descripcion AS Alternativa_escogida,
+((pregunta.puntaje * alternativa.porcentajecorrecto) / 100) AS Puntaje_obtenido
+FROM respuesta
+INNER JOIN alternativa ON respuesta.alternativa_idalternativa = idalternativa
+INNER JOIN pregunta ON respuesta.pregunta_idpregunta = idpregunta
+INNER JOIN alumno ON alumno_idalumno = idalumno
+INNER JOIN test ON pregunta.test_idtest = idtest
+ORDER BY respuesta.idrespuesta;
+
+--SELECT * FROM puntajes_por_alumno;
+
+--Query que nos muestra cantidad de respuestas correctas y erradas de cada alumno y su puntaje no normalizado
+SELECT 
+idalumno, alumno.nombre AS nombre, id_test,
+COUNT(CASE WHEN puntajes_por_alumno.puntaje_obtenido != 0 THEN 1 END) AS buenas,
+COUNT(CASE WHEN puntajes_por_alumno.puntaje_obtenido = 0 THEN 1 END) AS malas,
+CASE
+    WHEN ROUND(COUNT(CASE WHEN puntajes_por_alumno.puntaje_obtenido != 0 THEN 1 END) - (COUNT(CASE WHEN puntajes_por_alumno.puntaje_obtenido = 0 THEN 1 END) / 4), 1) < 1
+    THEN 1
+    ELSE ROUND(COUNT(CASE WHEN puntajes_por_alumno.puntaje_obtenido != 0 THEN 1 END) - (COUNT(CASE WHEN puntajes_por_alumno.puntaje_obtenido = 0 THEN 1 END) / 4), 1)
+    END as puntaje
+FROM puntajes_por_alumno
+INNER JOIN alumno on puntajes_por_alumno.id_alumno = alumno.idalumno
+GROUP BY idalumno, nombre, id_test
+ORDER BY idalumno;
+
+--6. obtener puntaje normalizado
+--se crea una vista con todas las evaluaciones y sus respectivos puntajes totales
+CREATE OR REPLACE VIEW puntaje_por_test AS
+SELECT test.idtest, test.nombre AS nombre, SUM(pregunta.puntaje) AS Puntaje_total
+FROM test
+LEFT JOIN pregunta ON test.idtest = pregunta.test_idtest
+GROUP BY idtest, nombre
+ORDER BY idtest;
+
+--Se crea una vista de las notas noramalizadas para hacer mas eficaz las siguientes queries
+CREATE OR REPLACE VIEW notas_normalizadas AS
+SELECT id_alumno, alumno_nombre, id_test, puntaje_por_test.puntaje_total, SUM(puntaje_obtenido) AS puntaje_obtenido,
+    CASE
+        WHEN (7 * SUM(puntaje_obtenido) / puntaje_por_test.puntaje_total) < 1
+        THEN 1
+        ELSE ROUND((7 * SUM(puntaje_obtenido) / puntaje_por_test.puntaje_total), 1)
+    END as nota
+FROM puntajes_por_alumno
+LEFT JOIN puntaje_por_test ON puntajes_por_alumno.id_test = puntaje_por_test.idtest
+GROUP BY id_alumno, alumno_nombre, id_test, puntaje_por_test.puntaje_total
+ORDER BY id_test;
+    
+SELECT * from notas_normalizadas;
+    
+--7. nombre de alumnos que aprueben deperminada prueba
+SELECT * FROM notas_normalizadas 
+WHERE nota >= 4
+ORDER BY nota desc;
+--8. nota promedio de estudiantes de determinado curso, para una evaluacion terminada
+SELECT curso.idcurso AS id_curso, programa.idprograma AS id_programa, programa.nombreprograma AS nombre_programa, idtest, ROUND(AVG(notas_normalizadas.nota), 1) AS promedio
+FROM curso
+LEFT JOIN programa ON curso.programa_idprograma = programa.idprograma
+LEFT JOIN alumno ON idcurso = alumno.curso_idcurso
+LEFT JOIN notas_normalizadas ON alumno.idalumno = notas_normalizadas.id_alumno
+LEFT JOIN test ON notas_normalizadas.id_test = test.idtest
+GROUP BY curso.idcurso, programa.idprograma, programa.nombreprograma , idtest
+ORDER BY curso.idcurso, promedio;

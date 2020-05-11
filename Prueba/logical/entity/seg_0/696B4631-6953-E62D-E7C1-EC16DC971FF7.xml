@@ -1,0 +1,59 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="696B4631-6953-E62D-E7C1-EC16DC971FF7" name="Programa">
+<createdBy>Jktolorza</createdBy>
+<createdTime>2020-03-13 01:23:33 UTC</createdTime>
+<ownerDesignName>Pruebaa</ownerDesignName>
+<engineerTo>
+<item key="1BAB9510-6810-8ECB-3078-BBC107451344" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="idPrograma" id="4372826C-A62B-BCFC-9D7F-3FC8DA581CAF">
+<createdBy>Jktolorza</createdBy>
+<createdTime>2020-03-13 01:23:40 UTC</createdTime>
+<ownerDesignName>Pruebaa</ownerDesignName>
+<engineerTo>
+<item key="1BAB9510-6810-8ECB-3078-BBC107451344" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nombrePrograma" id="FEBF0172-9C6F-F53A-3A3F-133F9B860409">
+<createdBy>Jktolorza</createdBy>
+<createdTime>2020-03-13 01:23:43 UTC</createdTime>
+<ownerDesignName>Pruebaa</ownerDesignName>
+<engineerTo>
+<item key="1BAB9510-6810-8ECB-3078-BBC107451344" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="05D4C61F-B3B6-2D18-6F69-80E86D130143" name="Programa PK">
+<createdBy>Jktolorza</createdBy>
+<createdTime>2020-03-13 01:24:00 UTC</createdTime>
+<ownerDesignName>Pruebaa</ownerDesignName>
+<engineerTo>
+<item key="1BAB9510-6810-8ECB-3078-BBC107451344" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>4372826C-A62B-BCFC-9D7F-3FC8DA581CAF</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

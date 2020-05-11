@@ -1,0 +1,94 @@
+--Script  SQL  que  registre  al  menos  2  cursos  de  10  estudiantes  que  respondan  estas evaluaciones.
+--
+insert into programa (idprograma, nombreprograma)
+values(300,'FullStack Java Trainee');
+
+insert into programa (idprograma, nombreprograma)
+values(301, 'Front-End Trainee');
+
+insert into curso (idcurso, programa_idprograma)
+values (1,300);
+
+insert into curso (idcurso, programa_idprograma)
+values (2,301);
+
+insert into curso (idcurso, programa_idprograma)
+values (3,300);
+
+-- 
+
+insert into alumno (idalumno, nombre, edad,curso_idcurso)
+values (1,'Daniel Salgado',23,2);
+
+insert into alumno (idalumno, nombre, edad,curso_idcurso)
+values (2,'Manuel Pedrero',25,2);
+
+insert into alumno (idalumno, nombre, edad,curso_idcurso)
+values (3,'Javier Perez',20,2);
+
+insert into alumno (idalumno, nombre, edad,curso_idcurso)
+values (4,'Roberto Fonseca',23,2);
+
+insert into alumno (idalumno, nombre, edad,curso_idcurso)
+values (5,'Nora Fernandez',43,2);
+
+insert into alumno (idalumno, nombre, edad,curso_idcurso)
+values (6,'Raul Parra',38,2);
+
+insert into alumno (idalumno, nombre, edad,curso_idcurso)
+values (7,'Monica Carter',19,2);
+
+insert into alumno (idalumno, nombre, edad,curso_idcurso)
+values (8,'Luisa Valez',33,2);
+
+insert into alumno (idalumno, nombre, edad,curso_idcurso)
+values (9,'Jose Buenavida',45,2);
+
+insert into alumno (idalumno, nombre, edad,curso_idcurso)
+values (10,'Maria Caceres',29,2);
+
+insert into alumno (idalumno, nombre, edad,curso_idcurso)
+values (11,'Pedro Lizama',25,1);
+
+insert into alumno (idalumno, nombre, edad,curso_idcurso)
+values (12,'Maria Alvarez',38,1);
+
+insert into alumno (idalumno, nombre, edad,curso_idcurso)
+values (13,'Maria Paz Vicaria',43,1);
+
+insert into alumno (idalumno, nombre, edad,curso_idcurso)
+values (14,'Alicia Mandiola',54,1);
+
+insert into alumno (idalumno, nombre, edad,curso_idcurso)
+values (15,'Maricela Soto',45,1);
+
+insert into alumno (idalumno, nombre, edad,curso_idcurso)
+values (16,'Daniel Fontaner',33,1);
+
+insert into alumno (idalumno, nombre, edad,curso_idcurso)
+values (17,'Alberto Rojas',46,1);
+
+insert into alumno (idalumno, nombre, edad,curso_idcurso)
+values (18,'Violeta Kast',51,1);
+
+insert into alumno (idalumno, nombre, edad,curso_idcurso)
+values (19,'Daniela Perez',23,1);
+
+insert into alumno (idalumno, nombre, edad,curso_idcurso)
+values (20,'Manuela Palma',18,1);
+
+insert into alumno (idalumno, nombre, edad,curso_idcurso)
+values (21,'Mamberroi Aksar',67,3);
+
+insert into alumno (idalumno, nombre, edad,curso_idcurso)
+values (22,'Patricio Melo',55,3);
+
+insert into alumno (idalumno, nombre, edad,curso_idcurso)
+values (23,'Federico Mendez',23,3);
+
+insert into alumno (idalumno, nombre, edad,curso_idcurso)
+values (24,'Mirta Lazanta',19,3);
+
+insert into alumno (idalumno, nombre, edad,curso_idcurso)
+values (25,'Nicanor Perez',21,3);
+

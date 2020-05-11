@@ -1,0 +1,768 @@
+--Script SQL que registre al menos 2 evaluaciones, con 10 preguntas y 4 alternativas.
+--Creacion de evaluaciones, una para cada programa
+
+insert into test (idtest, nombre, descripcion, unidad, autor,fechadecreacion, programa_idprograma)
+values (1, 'Prueba POO', 'Evaluacion encargada de probar los conocimientos acerca de la programcion orientada a objetos', 
+'Unidad 4', 'Profesor Manuel Astorga', TO_DATE('2019-04-01','YYYY-MM-DD'),300);
+
+insert into test (idtest, nombre, descripcion, unidad, autor,fechadecreacion, programa_idprograma)
+values (2, 'Prueba HTML/CSS', 'Evaluacion encargada de probar los conocimientos acerca de los lenguajes HTML y CSS'
+,'Unidad 1', 'Profesor Rigoberto Hernandez', TO_DATE('2018-05-22','YYYY-MM-DD'),301);
+
+insert into test (idtest, nombre, descripcion, unidad, autor,fechadecreacion, programa_idprograma)
+values (3, 'Prueba aplicacion', 'Evaluacion encargada de evaluar la creacion de programas en java', 
+'Unidad 4', 'Profesor Miranda Meloso', TO_DATE('2009-04-01','YYYY-MM-DD'),300);
+--llenar relacion 9(test-curso) con valores.
+insert into relation_9 (test_idtest, curso_idcurso)
+values (1,1);
+insert into relation_9 (test_idtest, curso_idcurso)
+values (2,2);
+insert into relation_9 (test_idtest, curso_idcurso)
+values (3,1);
+
+--Creacion de 10 preguntas, prueba 1.
+insert into pregunta (idpregunta, enunciado, puntaje, test_idtest)
+values (1,'¿Cuál es la descripción que crees que define mejor el concepto "clase" en la programación orientada a objetos?', 10,1);
+
+insert into pregunta (idpregunta, enunciado, puntaje, test_idtest)
+values (2,'¿Qué elementos crees que definen a un objeto?', 10,1);
+
+insert into pregunta (idpregunta, enunciado, puntaje, test_idtest)
+values (3,'¿Qué código de los siguientes tiene que ver con la herencia?', 10,1);
+
+insert into pregunta (idpregunta, enunciado, puntaje, test_idtest)
+values (4,'¿Qué significa instanciar una clase?', 10,1);
+
+insert into pregunta (idpregunta, enunciado, puntaje, test_idtest)
+values (5,'En Java, ¿a qué nos estamos refiriendo si hablamos de "Swing"?', 10,1);
+
+insert into pregunta (idpregunta, enunciado, puntaje, test_idtest)
+values (6,'¿Qué es Eclipse?', 10,1);
+
+insert into pregunta (idpregunta, enunciado, puntaje, test_idtest)
+values (7,'¿Qué es el bytecode en Java?', 10,1);
+
+insert into pregunta (idpregunta, enunciado, puntaje, test_idtest)
+values (8,'¿Qué código asociarías a una Interfaz en Java?', 10,1);
+
+insert into pregunta (idpregunta, enunciado, puntaje, test_idtest)
+values (9,'¿Qué significa sobrecargar (overload) un método?', 10,1);
+
+insert into pregunta (idpregunta, enunciado, puntaje, test_idtest)
+values (10,'¿Qué es una excepción?', 10,1);
+
+--Creacion de 10 preguntas, prueba 2.
+
+insert into pregunta (idpregunta, enunciado, puntaje, test_idtest)
+values (11,'¿Cuál es el lenguaje estándar específico para aplicar estilos de presentación a nuestras páginas web?', 10,2);
+
+insert into pregunta (idpregunta, enunciado, puntaje, test_idtest)
+values (12,'¿Qué es XHTML?', 10,2);
+
+insert into pregunta (idpregunta, enunciado, puntaje, test_idtest)
+values (13,'¿Cuál crees que es la mejor manera de aplicar estilos a una página web?', 10,2);
+
+insert into pregunta (idpregunta, enunciado, puntaje, test_idtest)
+values (14,'¿Por qué es conveniente incluir la declaración de DOCTYPE en la página HTML?', 10,2);
+
+insert into pregunta (idpregunta, enunciado, puntaje, test_idtest)
+values (15,'¿Para que sirve el atributo "class"?', 10,2);
+
+insert into pregunta (idpregunta, enunciado, puntaje, test_idtest)
+values (16,'¿Qué función tiene el elemento "div"?', 10,2);
+
+insert into pregunta (idpregunta, enunciado, puntaje, test_idtest)
+values (17,'¿Qué está mal en esta regla de estilo?: .cuadro { border: 1px blue dotted padding: 10px 5px; }', 10,2);
+
+insert into pregunta (idpregunta, enunciado, puntaje, test_idtest)
+values (18,'¿Qué significa que una etiqueta/elemento está "deprecated" en HTML?', 10,2);
+
+insert into pregunta (idpregunta, enunciado, puntaje, test_idtest)
+values (19,'Si incluimos una etiqueta de este tipo en nuestra página HTML, ¿qué queremos que haga el navegador?: <img src="../icono.gif" />', 10,2);
+
+insert into pregunta (idpregunta, enunciado, puntaje, test_idtest)
+values (20,'¿Cómo se incluye un comentario nuestro en una página HTML para que no se interprete por el navegador?', 10,2);
+
+--Creacion de alternativas para todas las preguntas
+--1
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (1,'Alternativa 1-A', 0, 0 , 1);
+
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (2,'Alternativa 1-B', 0, 0, 1);
+
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (3,'Alternativa 1-C', 1, 100, 1);
+
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (4,'Alternativa 1-D', 0, 0, 1);
+
+--2
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (5,'Alternativa 2-A', 1, 50, 2);
+
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (6,'Alternativa 2-B', 1, 50, 2);
+
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (7,'Alternativa 2-C', 0, 0, 2);
+
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (8,'Alternativa 2-D', 0, 0, 2);
+
+--3
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (9,'Alternativa 3-A', 1, 50, 3);
+
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (10,'Alternativa 3-B', 0, 0, 3);
+
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (11,'Alternativa 3-C', 1, 50, 3);
+
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (12,'Alternativa 3-D', 0, 0, 3);
+
+--4
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (13,'Alternativa 4-A', 0, 0, 4);
+
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (14,'Alternativa 4-B', 0, 0, 4);
+
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (15,'Alternativa 4-C', 1, 100, 4);
+
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (16,'Alternativa 4-D', 0, 0, 4);
+
+--5
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (17,'Alternativa 5-A', 1, 100, 5);
+
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (18,'Alternativa 5-B', 0, 0, 5);
+
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (19,'Alternativa 5-C', 0, 0, 5);
+
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (20,'Alternativa 5-D', 0, 0, 5);
+
+--6
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (21,'Alternativa 6-A', 0, 0, 6);
+
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (22,'Alternativa 6-B', 0, 0, 6);
+
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (23,'Alternativa 6-C', 1, 100, 6);
+
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (24,'Alternativa 6-D', 0, 0, 6);
+
+--7
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (25,'Alternativa 7-A', 1, 50, 7);
+
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (26,'Alternativa 7-B', 1, 50, 7);
+
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (27,'Alternativa 7-C', 0, 0, 7);
+
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (28,'Alternativa 7-D', 0, 0, 7);
+
+--8
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (29,'Alternativa 8-A', 0, 0, 8);
+
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (30,'Alternativa 8-B', 0, 0, 8);
+
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (31,'Alternativa 8-C', 1, 100, 8);
+
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (32,'Alternativa 8-D', 0, 0, 8);
+
+--9
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (33,'Alternativa 9-A', 0, 0, 9);
+
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (34,'Alternativa 9-B', 0, 0, 9);
+
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (35,'Alternativa 9-C', 1, 50, 9);
+
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (36,'Alternativa 9-D', 1, 50, 9);
+
+--10
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (37,'Alternativa 10-A', 1, 50, 10);
+
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (38,'Alternativa 10-B', 0, 0, 10);
+
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (39,'Alternativa 10-C', 1, 50, 10);
+
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (40,'Alternativa 10-D', 0, 0, 10);
+
+--Alternativas segunda prueba
+--2.1
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (41,'Alternativa 11-A', 0, 0, 11);
+
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (42,'Alternativa 11-B', 0, 0, 11);
+
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (43,'Alternativa 11-C', 1, 100, 11);
+
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (44,'Alternativa 11-D', 0, 0, 11);
+
+--2.2
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (45,'Alternativa 12-A', 1, 100, 12);
+
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (46,'Alternativa 12-B', 0, 0, 12);
+
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (47,'Alternativa 12-C', 0, 0, 12);
+
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (48,'Alternativa 12-D', 0, 0, 12);
+
+--2.3
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (49,'Alternativa 13-A', 0, 0, 13);
+
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (50,'Alternativa 13-B', 1, 100, 13);
+
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (51,'Alternativa 13-C', 0, 0, 13);
+
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (52,'Alternativa 13-D', 0, 0, 13);
+
+--2.4
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (53,'Alternativa 14-A', 0, 0, 14);
+
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (54,'Alternativa 14-B', 1, 100, 14);
+
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (55,'Alternativa 14-C', 0, 0, 14);
+
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (56,'Alternativa 14-D', 0, 0, 14);
+
+--2.5
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (57,'Alternativa 15-A', 0, 0, 15);
+
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (58,'Alternativa 15-B', 0, 0, 15);
+
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (59,'Alternativa 15-C', 1, 100, 15);
+
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (60,'Alternativa 15-D', 0, 0, 15);
+
+--2.6
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (61,'Alternativa 16-A', 0, 0, 16);
+
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (62,'Alternativa 16-B', 1, 100, 16);
+
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (63,'Alternativa 16-C', 0, 0, 16);
+
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (64,'Alternativa 16-D', 0, 0, 16);
+
+--2.7
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (65,'Alternativa 17-A', 1, 100, 17);
+
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (66,'Alternativa 17-B', 0, 0, 17);
+
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (67,'Alternativa 17-C', 0, 0, 17);
+
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (68,'Alternativa 17-D', 0, 0, 17);
+
+--2.8
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (69,'Alternativa 18-A', 0, 0, 18);
+
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (70,'Alternativa 18-B', 1, 100, 18);
+
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (71,'Alternativa 18-C', 0, 0, 18);
+
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (72,'Alternativa 18-D', 0, 0, 18);
+
+--2.9
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (73,'Alternativa 19-A', 1, 100, 19);
+
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (74,'Alternativa 19-B', 0, 0, 19);
+
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (75,'Alternativa 19-C', 0, 0, 19);
+
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (76,'Alternativa 19-D', 0, 0, 19);
+
+--2.10
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (77,'Alternativa 20-A', 1, 50, 20);
+
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (78,'Alternativa 20-B', 0, 0, 20);
+
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (79,'Alternativa 20-C', 0, 0, 20);
+
+insert into alternativa(idalternativa,descripcion,logicocorreccion,porcentajecorrecto,pregunta_idpregunta)
+values (80,'Alternativa 20-D', 1, 50, 20);
+
+--Respuestas
+--A1
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (1,1,1,3);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (2,1,2,5);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (3,1,3,11);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (4,1,4,15);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (5,1,5,17);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (6,1,6,23);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (7,1,7,25);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (8,1,8,31);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (9,1,9,35);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (10,1,10,39);
+--A2
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (11,2,1,3);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (12,2,2,5);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (13,2,3,11);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (14,2,4,14);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (15,2,5,20);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (16,2,6,22);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (17,2,7,27);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (18,2,8,31);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (19,2,9,34);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (20,2,10,37);
+--A3
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (21,3,1,3);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (22,3,2,6);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (23,3,3,11);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (24,3,4,15);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (25,3,5,18);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (26,3,6,21);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (27,3,7,25);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (28,3,8,29);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (29,3,9,35);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (30,3,10,39);
+--A4
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (31,4,1,3);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (32,4,2,5);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (33,4,3,9);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (34,4,4,15);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (35,4,5,17);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (36,4,6,24);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (37,4,7,28);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (38,4,8,31);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (39,4,9,34);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (40,4,10,40);
+--A5
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (41,5,1,2);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (42,5,2,7);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (43,5,3,11);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (44,5,4,15);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (45,5,5,17);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (46,5,6,23);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (47,5,7,26);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (48,5,8,29);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (49,5,9,35);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (50,5,10,37);
+--A6
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (51,6,1,4);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (52,6,2,8);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (53,6,3,12);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (54,6,4,16);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (55,6,5,20);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (56,6,6,24);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (57,6,7,28);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (58,6,8,32);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (59,6,9,36);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (60,6,10,40);
+--A7
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (61,7,1,3);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (62,7,2,5);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (63,7,3,9);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (64,7,4,11);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (65,7,5,17);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (66,7,6,21);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (67,7,7,25);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (68,7,8,29);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (69,7,9,33);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (70,7,10,37);
+--A8
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (71,8,1,3);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (72,8,2,6);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (73,8,3,10);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (74,8,4,14);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (75,8,5,18);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (76,8,6,23);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (77,8,7,24);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (78,8,8,29);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (79,8,9,33);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (80,8,10,37);
+--A9
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (81,9,1,3);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (82,9,2,5);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (83,9,3,10);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (84,9,4,14);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (85,9,5,17);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (86,9,6,23);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (87,9,7,25);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (88,9,8,29);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (89,9,9,33);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (90,9,10,37);
+--A10
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (91,10,1,3);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (92,10,2,8);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (93,10,3,12);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (94,10,4,15);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (95,10,5,17);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (96,10,6,21);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (97,10,7,25);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (98,10,8,29);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (99,10,9,33);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (100,10,10,40);
+--A11
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (101,11,11,43);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (102,11,12,45);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (103,11,13,50);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (104,11,14,54);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (105,11,15,59);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (106,11,16,62);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (107,11,17,65);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (108,11,18,70);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (109,11,19,73);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (110,11,20,77);
+--A12
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (111,12,11,42);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (112,12,12,45);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (113,12,13,50);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (114,12,14,54);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (115,12,15,58);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (116,12,16,63);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (117,12,17,65);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (118,12,18,70);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (119,12,19,73);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (120,12,20,80);
+--A13
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (121,13,11,43);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (122,13,12,46);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (123,13,13,50);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (124,13,14,55);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (125,13,15,59);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (126,13,16,62);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (127,13,17,68);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (128,13,18,70);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (129,13,19,73);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (130,13,20,78);
+--A14
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (131,14,11,44);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (132,14,12,48);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (133,14,13,52);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (134,14,14,56);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (135,14,15,60);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (136,14,16,64);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (137,14,17,68);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (138,14,18,72);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (139,14,19,76);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (140,14,20,80);
+--A15
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (141,15,11,41);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (142,15,12,45);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (143,15,13,49);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (144,15,14,53);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (145,15,15,57);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (146,15,16,61);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (147,15,17,65);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (148,15,18,69);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (149,15,19,73);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (150,15,20,77);
+--A16
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (151,16,11,43);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (152,16,12,48);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (153,16,13,50);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (154,16,14,55);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (155,16,15,60);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (156,16,16,63);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (157,16,17,67);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (158,16,18,70);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (159,16,19,75);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (160,16,20,79);
+--A17
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (161,17,11,43);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (162,17,12,48);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (163,17,13,50);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (164,17,14,55);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (165,17,15,60);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (166,17,16,63);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (167,17,17,67);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (168,17,18,70);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (169,17,19,75);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (170,17,20,79);
+--A18
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (171,18,11,43);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (172,18,12,48);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (173,18,13,50);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (174,18,14,55);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (175,18,15,60);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (176,18,16,63);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (177,18,17,67);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (178,18,18,70);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (179,18,19,75);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (180,18,20,79);
+--A19
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (181,19,11,43);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (182,19,12,48);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (183,19,13,50);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (184,19,14,55);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (185,19,15,60);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (186,19,16,63);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (187,19,17,67);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (188,19,18,70);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (189,19,19,75);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (190,19,20,79);
+--A20
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (191,20,11,43);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (192,20,12,48);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (193,20,13,50);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (194,20,14,55);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (195,20,15,60);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (196,20,16,63);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (197,20,17,67);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (198,20,18,70);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (199,20,19,75);
+insert into respuesta(idrespuesta,alumno_idalumno,pregunta_idpregunta,alternativa_idalternativa)
+values (200,20,20,79);

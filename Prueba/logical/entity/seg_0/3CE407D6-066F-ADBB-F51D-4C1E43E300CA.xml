@@ -1,0 +1,104 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="3CE407D6-066F-ADBB-F51D-4C1E43E300CA" name="Alternativa">
+<createdBy>Jktolorza</createdBy>
+<createdTime>2020-03-13 01:20:40 UTC</createdTime>
+<ownerDesignName>Pruebaa</ownerDesignName>
+<engineerTo>
+<item key="1BAB9510-6810-8ECB-3078-BBC107451344" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="idAlternativa" id="CD8A5EE7-9E74-6244-FE38-41A8C729AF12">
+<createdBy>Jktolorza</createdBy>
+<createdTime>2020-03-13 01:20:46 UTC</createdTime>
+<ownerDesignName>Pruebaa</ownerDesignName>
+<engineerTo>
+<item key="1BAB9510-6810-8ECB-3078-BBC107451344" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="descripcion" id="42BDA3FC-EB88-BB4D-03BD-FD615F97D50B">
+<createdBy>Jktolorza</createdBy>
+<createdTime>2020-03-13 01:20:58 UTC</createdTime>
+<ownerDesignName>Pruebaa</ownerDesignName>
+<engineerTo>
+<item key="1BAB9510-6810-8ECB-3078-BBC107451344" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>300</dataTypeSize>
+<ownDataTypeParameters>300,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="logicoCorreccion" id="C175B765-7AB8-1D49-12A5-4CA19E3125F4">
+<createdBy>Jktolorza</createdBy>
+<createdTime>2020-03-13 01:21:09 UTC</createdTime>
+<commentInRDBMS><![CDATA[1 = correcto
+0 = incorrecto]]></commentInRDBMS>
+<ownerDesignName>Pruebaa</ownerDesignName>
+<engineerTo>
+<item key="1BAB9510-6810-8ECB-3078-BBC107451344" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT034</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="porcentajeCorrecto" id="AE4078E7-B84E-34A7-3379-26A533BB56DD">
+<createdBy>Jktolorza</createdBy>
+<createdTime>2020-03-13 01:21:53 UTC</createdTime>
+<ownerDesignName>Pruebaa</ownerDesignName>
+<engineerTo>
+<item key="1BAB9510-6810-8ECB-3078-BBC107451344" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<ownDataTypeParameters>,2,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="idPregunta" id="F72C96CC-40E7-874C-2726-7397EB1BBFCC">
+<createdBy>Jktolorza</createdBy>
+<createdTime>2020-03-13 01:25:08 UTC</createdTime>
+<generatorID>60939D34-BC46-1BAA-D820-762548A2A88C</generatorID>
+<ownerDesignName>Pruebaa</ownerDesignName>
+<engineerTo>
+<item key="1BAB9510-6810-8ECB-3078-BBC107451344" value="true"/>
+</engineerTo>
+<referedAttribute>0318A5D4-143F-6EF0-B6D7-89C9E41F47CB</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="9C9017D1-BB25-98C6-1914-C36479DC897A" name="Alternativa PK">
+<createdBy>Jktolorza</createdBy>
+<createdTime>2020-03-13 01:20:55 UTC</createdTime>
+<ownerDesignName>Pruebaa</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="1BAB9510-6810-8ECB-3078-BBC107451344" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>CD8A5EE7-9E74-6244-FE38-41A8C729AF12</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

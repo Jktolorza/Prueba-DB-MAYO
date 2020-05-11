@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C7A6B3E4-5A45-0BFD-05FC-82D434307D55" name="Relation_9">
+<createdBy>Jktolorza</createdBy>
+<createdTime>2020-03-13 01:29:52 UTC</createdTime>
+<ownerDesignName>Pruebaa</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Test_idTest" id="518FFBE4-B8F1-EFC1-793C-DDA49EE3ABBE">
+<createdBy>Jktolorza</createdBy>
+<createdTime>2020-03-13 01:29:52 UTC</createdTime>
+<ownerDesignName>Pruebaa</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9C49516D-5883-FCBE-8A63-B5B99CC398D1" referredColumn="5AEDA11C-F5D5-6A7C-0D5D-15E8B7EE49DC"/>
+</associations>
+</Column>
+<Column name="Curso_idCurso" id="9080714A-C05D-1313-DEA0-B6A765A59330">
+<createdBy>Jktolorza</createdBy>
+<createdTime>2020-03-13 04:04:21 UTC</createdTime>
+<ownerDesignName>Pruebaa</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="41AC252F-0110-96BF-EFBC-4C96BDEE4979" referredColumn="CF2A2002-4AB6-DB10-3D4E-6EDB8E3BB17F"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="734D5A74-7D47-5BEA-7311-BB0223B8BC9F" name="Relation_9_PK">
+<createdBy>Jktolorza</createdBy>
+<createdTime>2020-03-13 01:29:52 UTC</createdTime>
+<ownerDesignName>Pruebaa</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="518FFBE4-B8F1-EFC1-793C-DDA49EE3ABBE"/>
+<colUsage columnID="9080714A-C05D-1313-DEA0-B6A765A59330"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D79FA13A-3D32-0AA8-9C69-94B36C3A2B23" name="Relation_9_Test_FK">
+<createdBy>Jktolorza</createdBy>
+<createdTime>2020-03-13 01:29:52 UTC</createdTime>
+<generatorID>1F262504-0CD3-3C6D-DA7B-40ED6C581C61</generatorID>
+<ownerDesignName>Pruebaa</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="518FFBE4-B8F1-EFC1-793C-DDA49EE3ABBE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="39F93152-9A26-4EE2-1A70-56824B2395AD" name="Relation_9_Curso_FK">
+<createdBy>Jktolorza</createdBy>
+<createdTime>2020-03-13 01:29:52 UTC</createdTime>
+<generatorID>1F262504-0CD3-3C6D-DA7B-40ED6C581C61</generatorID>
+<ownerDesignName>Pruebaa</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9080714A-C05D-1313-DEA0-B6A765A59330"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

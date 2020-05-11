@@ -1,0 +1,62 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="960A7E26-C956-935A-5114-921E8619397E" name="Curso">
+<createdBy>Jktolorza</createdBy>
+<createdTime>2020-03-13 01:29:52 UTC</createdTime>
+<generatorID>B9CFE097-20B3-0F9A-002D-65542BB74DA3</generatorID>
+<ownerDesignName>Pruebaa</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="idCurso" id="CF2A2002-4AB6-DB10-3D4E-6EDB8E3BB17F">
+<createdBy>Jktolorza</createdBy>
+<createdTime>2020-03-13 01:29:52 UTC</createdTime>
+<generatorID>0D03DED4-E249-90DB-AB20-409F74FAD03F</generatorID>
+<ownerDesignName>Pruebaa</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Programa_idPrograma" id="5E8FDE78-C5B1-DCC1-5DB6-BE9E88B38725">
+<createdBy>Jktolorza</createdBy>
+<createdTime>2020-03-13 01:29:52 UTC</createdTime>
+<generatorID>F66D3F83-A800-EF11-A74C-20F917F9BE42</generatorID>
+<ownerDesignName>Pruebaa</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="07348A65-3DCA-BE78-32E4-FD29CCEBC46B" referredColumn="A348602F-B1C1-2D17-A7BD-CF59315E2619"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="0D972AB7-8544-3DC1-C3EA-52EA6F5D36ED" name="Curso_PK">
+<createdBy>Jktolorza</createdBy>
+<createdTime>2020-03-13 01:29:52 UTC</createdTime>
+<ownerDesignName>Pruebaa</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="CF2A2002-4AB6-DB10-3D4E-6EDB8E3BB17F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0DB5F762-56D1-E8BA-55F0-5495F2C493C1" name="Curso_Programa_FK">
+<createdBy>Jktolorza</createdBy>
+<createdTime>2020-03-13 01:29:52 UTC</createdTime>
+<generatorID>60150F46-B42A-2D38-F7C2-C3BD6596997D</generatorID>
+<ownerDesignName>Pruebaa</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5E8FDE78-C5B1-DCC1-5DB6-BE9E88B38725"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
